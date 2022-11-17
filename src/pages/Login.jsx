@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import GoogleLogin from "../components/GoogleLogin";
-import { AiOutlineMail, AiTwotoneHome } from "react-icons/ai"
+import { AiOutlineMail } from "react-icons/ai"
 import { RiLockPasswordLine } from 'react-icons/ri'
-import { Link } from "react-router-dom";
 
 const Login = (props) => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [token, setToken] = useState(null);
@@ -36,39 +37,31 @@ const Login = (props) => {
           data
         );
         if (result.data.token) {
-          // Set token from backend to local storage
-          // {"data": { "token": "ini token" }}
           localStorage.setItem("token", result.data.token);
           setToken(result.data.token);
+          navigate('/');
         }
       } catch (error) {
-        // If there are any error it will show the error message from backend
-        // { "message": "Password salah" }
         alert(error.response.data.message);
       }
     }
   };
 
-  // const handleLogout = () => {
-  //   localStorage.removeItem("token");
-  //   setToken(null);
-  // };
-
   return (
+  <>
     <div className='w-full h-screen'>
       <img 
         className='hidden sm:block absolute w-full h-full object-cover' 
         src='https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bcae-07a3f8dc141a/f6d7434e-d6de-4185-a6d4-c77a2d08737b/US-en-20220502-popsignuptwoweeks-perspective_alpha_website_medium.jpg' 
         alt='/' 
       />
-        <div className='bg-black/60 fixed top-0 left-0 w-full h-screen'></div>
-          <div className='fixed w-full mx-4 z-50'>
-          <div className='max-w-[450px] h-[800] mx-auto bg-black/75 text-white mt-10'>
+      <div className='bg-black/60 fixed top-0 left-0 w-full h-screen'></div>
+        <div className='fixed w-full mx-4 z-50'>
+          <div className='sm:max-w-[350px] md:max-w-[400px] lg:w-[450px] py-2 sm:text-xs md:text-md lg:text-base h-[800] mx-auto bg-black/75 text-white mt-10'>
             <div className='max-w-[320px] mx-auto py-6'>
-              <h1 className='text-3xl font-bold text-center mb-8'>Log in to Your Account</h1>
-              {!token ? (
-                <>
-                <form onSubmit={handleSubmit}>
+              <h1 className='sm:text-xl md:text-2xl lg:text-3xl font-bold text-center mb-8'>Log in to Your Account</h1>
+  
+              <form onSubmit={handleSubmit}>
                 <div className="relative block">
                   <span className='absolute inset-y-0 right-0 flex items-center p-2 text-gray-400 text-xl'>
                     <i><AiOutlineMail /></i>
@@ -96,25 +89,23 @@ const Login = (props) => {
                     required
                   />
                 </div>
-                
-                <Link to='/' >
-                  <button className='w-full bg-red-600 py-3 my-6 rounded-3xl font-bold' type="submit">Login</button>
-                </Link>
+              
+                <button className='w-full bg-red-600 py-3 my-6 rounded-3xl font-bold hover:text-black' type="submit">Login</button>
                 <h3 className='text-center'>OR</h3>
                 <GoogleLogin setToken={setToken} label="Login with Google" />
-                  
+                <p className="py-1">
+                  <span className="text-gray-400 text-center">
+                    Not on Movielist yet?
+                  </span>{' '}
+                  <Link to='/register' className="hover:text-red-600">Register</Link>
+                </p>  
               </form>
-              </>
-              ) : (
-                <Link to='/'>
-                  <button className='w-full flex items-center justify-center bg-red-600 hover:bg-red-800 px-4 py-2 my-4 p-4 rounded-3xl cursor-pointer text-white font-bold'>
-                    Go<i className='pl-2 pr-2'><AiTwotoneHome /></i>to Explore Popular Film</button>
-                </Link>
-              )}
+
             </div>
           </div>
         </div>
     </div>
+  </>
   );
 };
 
