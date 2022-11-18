@@ -23,9 +23,9 @@ const Home = () => {
     <HeroSlider />
 
     <div className='flex justify-between p-2 my-6'>
-      <h1 className='font-bold sm:text-xl md:text-2xl lg:text-3xl text-white'>Popular Movies</h1>
+      <h1 className='font-bold text-sm lg:text-3xl text-white'>Popular Movies</h1>
       <Link to='/movie'>
-        <button className='text-white sm:text-xs md:text-md lg:text-base text-bold py-2 px-2 flex justify-between hover:text-red-600 rounded-3xl border-solid border-red-600 border-2 cursor-pointer'>View More
+        <button className='text-white text-[8px] lg:text-base text-bold py-auto lg:py-2 px-2 flex justify-between hover:text-red-600 rounded-3xl border-solid border-red-600 border-2 cursor-pointer'>View More
           <i className='text-white py-1 pl-2 text-bold hover:text-red-600'><MdMovie /></i>
         </button>
       </Link>

@@ -21,12 +21,12 @@ const Catalog = () => {
       />
       <div className='bg-black/80 fixed top-0 left-0 w-full h-screen'></div>
         <div className='flex items-center justify-between p-4 z-[100] w-full absolute'>
-          <h1 className='text-red-600 sm:text-2xl md:text-3xl lg:text-4xl  font-bold'>Movielist</h1>
+          <h1 className='text-red-600 text-lg lg:text-4xl font-bold'>Movielist</h1>
 
           <Link to="/movie">
             <form className="relative block">
               <input 
-                className='bg-transparent w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] py-2 text-white rounded-3xl border-solid border-red-600 border-2 px-4 placeholder:text-white placeholder:sm:text-xs placeholder:md:text-md placeholder:lg:text-base block focus:outline-none focus:border-red-500'
+                className='bg-transparent w-[140px] lg:w-[400px] py-auto lg:py-2 rounded-3xl border-solid border-red-600 border-2 px-2 lg:px-4 placeholder:text-white placeholder:text-[8px] placeholder:lg:text-base block focus:outline-none focus:border-red-500'
                 placeholder='What do you want to watch?'
                 type="text"
                 id=""
@@ -36,7 +36,7 @@ const Catalog = () => {
           </Link>
 
           <Link to='/'>
-            <button className='flex items-center justify-between sm:w-[100px] md:w-[120px] lg:w-[120px] py-2 p-4 sm:text-xs md:text-md lg:text-base rounded-3xl border-solid border-red-600 border-2 cursor-pointer text-red-600 hover:text-white'>Back to<i className="pl-2"><AiFillHome /></i></button> 
+            <button className='flex items-center justify-between lg:w-[120px] text-xs lg:text-base py-auto lg:py-2 px-2 lg:p-4 rounded-3xl border-solid border-red-600 border-2 cursor-pointer text-red-600 hover:text-white'>Back to<i className="pl-2"><AiFillHome /></i></button> 
           </Link>
         </div>
 

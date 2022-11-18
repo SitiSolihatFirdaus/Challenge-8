@@ -56,10 +56,10 @@ const Login = (props) => {
         alt='/' 
       />
       <div className='bg-black/60 fixed top-0 left-0 w-full h-screen'></div>
-        <div className='fixed w-full mx-4 z-50'>
+        <div className='fixed w-full mx-0 lg:mx-4 z-50'>
           <div className='sm:max-w-[350px] md:max-w-[400px] lg:w-[450px] py-2 sm:text-xs md:text-md lg:text-base h-[800] mx-auto bg-black/75 text-white mt-10'>
             <div className='max-w-[320px] mx-auto py-6'>
-              <h1 className='sm:text-xl md:text-2xl lg:text-3xl font-bold text-center mb-8'>Log in to Your Account</h1>
+              <h1 className='text-xl lg:text-3xl font-bold text-center mb-6 lg:mb-8'>Log in to Your Account</h1>
   
               <form onSubmit={handleSubmit}>
                 <div className="relative block">

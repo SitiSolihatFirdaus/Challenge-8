@@ -63,15 +63,15 @@ const HeroSlideItem = (props) => {
           src={`https://image.tmdb.org/t/p/w1280/${item?.backdrop_path}`}
           alt=""
         />
-        <div className='absolute w-full top-[25%] p-4 md:p-8'>
+        <div className='absolute w-full top-[30%] lg:top-[25%] p-2 lg:p-4'>
           <h1 className='text-3xl md:text-5xl w-[50%] font-bold text-white'>{item?.title}</h1>
-          <button className="flex items-center justify-between sm:text-xs md:text-md lg:text-base px-2 py-2 rounded-full border-solid border-yellow-500 border-2 text-yellow-400">
+          <button className="flex items-center justify-between text-[8px] lg:text-base px-2 py-auto lg:py-2 rounded-full border-solid border-yellow-500 border-2 text-yellow-400">
             <i className="mr-2"><BsFillStarFill /></i> 
             <h1 className="text-white">{item?.vote_average}</h1>
           </button>
-            <p className='w-[50%] sm:text-xs md:text-md lg:text-base text-white my-4'>{item?.overview}</p>
-            <button className='flex items-center justify-between w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] bg-red-600 py-2 p-6 rounded-3xl cursor-pointer text-white sm:text-xs md:text-md lg:text-base hover:text-black font-bold'>
-              <i className='hover:text-black'><FiPlayCircle /></i>WATCH TRAILER</button>
+          <p className='w-[75%] lg:w-[50%] text-[8px] lg:text-base text-white my-2 lg:my-4'>{item?.overview}</p>
+          <button className='flex items-center justify-between w-auto lg:w-[190px] bg-red-600 py-auto lg:py-2 lg:p-4 rounded-3xl cursor-pointer text-white text-[8px] lg:text-base hover:text-black font-bold'>
+            <i className='hover:text-black'><FiPlayCircle /></i>WATCH TRAILER</button>
         </div>
       </div>
     </div>

@@ -31,27 +31,27 @@ const Detail = () => {
       />
       <div className='bg-black/80 fixed top-0 left-0 w-full h-screen'></div>
         <div className='flex items-center justify-between p-4 w-full absolute'>
-          <h1 className='text-red-600 sm:text-2xl md:text-3xl lg:text-4xl  font-bold'>Movielist</h1> 
+          <h1 className='text-red-600 text-2xl lg:text-4xl font-bold'>Movielist</h1> 
           <Link to='/'>
-            <button className='flex items-center justify-between sm:w-[100px] md:w-[120px] lg:w-[120px] sm:text-xs md:text-md lg:text-base py-2 p-4 rounded-3xl border-solid border-red-600 border-2 cursor-pointer text-red-600 hover:text-white'>Back to<i className="pl-2"><AiFillHome /></i></button>
+            <button className='flex items-center justify-between lg:w-[120px] text-xs lg:text-base py-auto lg:py-2 px-2 lg:p-4 rounded-3xl border-solid border-red-600 border-2 cursor-pointer text-red-600 hover:text-white'>Back to<i className="pl-2"><AiFillHome /></i></button>
           </Link>
         </div>
 
         <div className="flex items-center justify-between p-4 w-full absolute mt-[80px]">
-          <img className="sm:w-[220px] md:w-[260px] lg:w-[300px] sm:h-[360px] md:h-[450px] lg:h-[500px] rounded-3xl border-white border-2 border-solid" src={image} alt="" />
-          <div className="ml-10">
-            <h1 className="text-white font-bold sm:text-4xl md:text-5xl lg:text-6xl  mb-4">{title}</h1>
+          <img className="w-[120px] lg:w-[300px] sm:h-[260px] lg:h-[500px] rounded-3xl border-white border-2 border-solid" src={image} alt="" />
+          <div className="ml-4 lg:ml-10">
+            <h1 className="text-white font-bold text-sm lg:text-6xl mb-2 lg:mb-4">{title}</h1>
             <div className="flex justify-left">
-              <button className="flex items-center justify-between sm:text-xs md:text-md lg:text-base px-4 py-2 rounded-full border-solid border-blue-400 border-x-2 text-blue-400"> 
+              <button className="flex items-center justify-between text-xs lg:text-base px-2 lg:px-4 py-auto lg:py-2 rounded-full border-solid border-blue-400 border-x-2 text-blue-400"> 
                 <h1 className="text-white">{data.original_language}</h1>
               </button>
-              <button className="flex items-center justify-between sm:text-xs md:text-md lg:text-base px-2 py-2 rounded-full border-solid border-yellow-500 border-2 text-yellow-400">
+              <button className="flex items-center justify-between text-xs lg:text-base px-2 py-auto lg:py-2 rounded-full border-solid border-yellow-500 border-2 text-yellow-400">
                 <i className="mr-2"><BsFillStarFill /></i> 
                 <h1 className="text-white">{data.vote_average}</h1>
               </button>
             </div>
-              <h3 className="text-red-600 my-4 sm:text-md md:text-base lg:text-xl">Release: {data.release_date}</h3>
-              <p className="text-white sm:text-md md:text-base lg:text-xl mr-10">{data.overview}</p>
+              <h3 className="text-red-600 my-2 lg:my-4 text-xs lg:text-xl">Release: {data.release_date}</h3>
+              <p className="text-white text-[8px] lg:text-xl mr-4">{data.overview}</p>
           </div>
         </div>
     </div>
